@@ -9,6 +9,8 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'activemerchant', :require => 'active_merchant'
 gem 'authorize-net'
 # gem 'sinatra', '1.1.0'
+gem 'rails_12factor'
+gem 'ruby', '2.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

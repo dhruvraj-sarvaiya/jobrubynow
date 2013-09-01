@@ -1,0 +1,45 @@
+
+        <div id="info">
+  <p>
+  </p><h2>Job Post Dashboard</h2> 
+  Welcome <%= @user.name %> (<%= @user.email %>) | <%= link_to 'Update Account Details', edit_path %>  <br>
+<p></p>
+
+<p>
+  </p><ul>
+    <li>All posts are approved manually to ensure a quality experience for our members. We try to optimize for a best time of day to publish posts to get the maximum traffic for you and this is typically within 24 hours of submission.</li>
+    <li>For Premium posts we'll reach out for a time to review your post. Please let us know if you want the post sent out immediately.</li>
+    <li>Jobs are active for 30 days. After that they are no longer listed on the site.</li>
+    <li>If you have any questions, please call (888) 669-2937 or email at <a href="mailto:steve@rubynow.com">steve@rubynow.com</a></li>
+  </ul>
+<p></p>
+
+<br>    
+    <% if @user.jobposts.any? %>
+      <h3>Job Posts (<%= @user.jobposts.count %>)</h3>
+      <ol class="jobposts">
+        
+      </ol>
+      <table cellspacing="5">
+        <thead>
+           <tr>
+            <th>ID</th>
+            <th>Preview</th>
+            <th>Posting Type</th>
+            <th>Paid</th>
+            <th>Published</th>
+            <th>Listed</th>
+            <th>Created</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+      <tbody>              
+        <%= render @jobposts %>      
+        </tbody>
+      </table>
+      <%= will_paginate @jobposts %>
+    <% end %>
+  To create a new job post : <%= link_to "Post a Job", new_jobpost_path, :title => 'Post a new job'%>
+</div>
+
+      

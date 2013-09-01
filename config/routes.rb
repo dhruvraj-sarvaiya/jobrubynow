@@ -1,5 +1,5 @@
-JobsRubynow::Application.routes.draw do
-   resources :jobposts
+Rubynow::Application.routes.draw do
+  resources :jobposts
    resources :users
    resources :sessions, only: [:new, :create, :destroy]
 
